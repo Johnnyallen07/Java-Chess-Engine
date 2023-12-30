@@ -9,7 +9,7 @@ A chess game build by Java Swing lib
 * play with AI: implemented by minimax alpha beta pruning algorithm
 
 ### AI Player
-* There are three difficulties: easy, medium, and hard, corresponding to 2,3,4 depths of search of the algorithm
+* There are three difficulties: easy, medium, and hard, corresponding to 1,2,4 depths of search of the algorithm (easy is dubious AI)
 * AI player is BLACK by default
 
 ## Small Tips

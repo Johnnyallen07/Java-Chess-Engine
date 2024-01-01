@@ -7,6 +7,7 @@ import chessgui.BoardRepaint;
 import chessgui.ButtonGUI;
 
 import javax.swing.*;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,8 @@ public class MenuActions {
 
     private final JPanel chessBoard;
     private final JFrame f;
+
+    private final String absoluteProjectPath = new File("").getAbsolutePath();
 
     private final Map<Point, Pair<PieceName, PieceColor>> map;
 
@@ -39,10 +42,11 @@ public class MenuActions {
         f.validate();
 
         // black init
+
         int row = 1;
                 for (int col = 0; col < 8; col++) {
             if (col == blackGap) continue;
-            JButton b = ButtonGUI.createButton("D:\\Desktop\\JavaChess\\src\\pieces\\pawn_black.png", row + col);
+            JButton b = ButtonGUI.createButton(absoluteProjectPath+"/src/pieces/pawn_black.png", row + col);
             chessBoard.remove(9 * (row+1) + col + 1);
             chessBoard.add(b, (9 * (row+1) + col + 1));
             // update b before take actions
@@ -56,7 +60,7 @@ public class MenuActions {
 
         for (int col = 0; col < 8; col++) {
             if (col == whiteGap) continue;
-            JButton b = ButtonGUI.createButton("D:\\Desktop\\JavaChess\\src\\pieces\\pawn_white.png", row + col);
+            JButton b = ButtonGUI.createButton(absoluteProjectPath+"/src/pieces/pawn_white.png", row + col);
             chessBoard.remove(9 * (row+1) + col + 1);
             chessBoard.add(b, (9 * (row+1) + col + 1));
             // update b before take actions
@@ -115,7 +119,7 @@ public class MenuActions {
             SwapActions.replace(f, chessBoard, b, new Point(row, col));
             ButtonActions.addActionsToButton(b, chessBoard, f);
             row = 1;
-            b = ButtonGUI.createButton("D:\\Desktop\\JavaChess\\src\\pieces\\pawn_black.png", row + col);
+            b = ButtonGUI.createButton(absoluteProjectPath+"/src/pieces/pawn_black.png", row + col);
             SwapActions.replace(f, chessBoard, b, new Point(row, col));
             // update b before take actions
             ButtonActions.addActionsToButton(b, chessBoard, f);
@@ -160,7 +164,7 @@ public class MenuActions {
         SwapActions.replace(f, chessBoard, b, new Point(row, col));
         ButtonActions.addActionsToButton(b, chessBoard, f);
         row = 6;
-        b = ButtonGUI.createButton("D:\\Desktop\\JavaChess\\src\\pieces\\pawn_white.png", row + col);
+            b = ButtonGUI.createButton(absoluteProjectPath+"/src/pieces/pawn_white.png", row + col);
         SwapActions.replace(f, chessBoard, b, new Point(row, col));
         // update b before take actions
         ButtonActions.addActionsToButton(b, chessBoard, f);

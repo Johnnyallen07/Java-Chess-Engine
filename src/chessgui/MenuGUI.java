@@ -82,7 +82,7 @@ public class MenuGUI {
                 PiecePointMap.initMap(map);
 
                 new MenuActions(jPanel, f, new ArrayList<>()).initStandardBoard(true, false);
-                MenuActions.setSearchDepth(3);
+                MenuActions.setSearchDepth(4);
                 f.validate();
             }
         });
